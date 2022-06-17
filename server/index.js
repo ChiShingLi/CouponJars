@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongooseDB = require("./db");
+const userRoute = require("./routes/user");
 
 const PORT = process.env.PORT;
 
@@ -11,14 +12,17 @@ mongooseDB();
 
 //cross-site & json parsing middleware
 app.use(cors());
-app.use(express.json); 
- 
+app.use(express.json());
+
+//routing
+app.use("/user", userRoute);
+
 app.get("/", (req, res) => {
     res.send("API home");
 })
 
 //start server
-app.listen(PORT || 3002, (err) => {
-    if (err) console.log("Error starting up server");
-    console.log(`server started at port: ${PORT}`);
+app.listen(Number(PORT), (err) => {
+    if (err) console.log("Couldn't connect to server")
+    console.log(`server listening at port: ${PORT}`);
 })

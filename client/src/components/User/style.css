@@ -1,0 +1,33 @@
+.signupContainer{
+    padding: 10px;
+    border: yellow 2px solid;
+    width: 500px;
+    border-radius: 10px;
+}
+
+.signupBtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid green;
+    background-color: transparent;
+    color: green;
+}
+.signupBtn:hover {
+    background-color: green;
+    color: white;
+}
+
+#signupFrom{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#signupFrom > input{
+    height: 30px;
+}
+
+.notice{
+    color: red;
+}
