@@ -1,13 +1,28 @@
-import Signup from "./components/User/Signup";
+import Signup from "./components/User/Signup/Signup";
+import Login from "./components/User/Login/Login";
+import Home from "./components/Home/Home"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import Navbar from "./components/Navbar/Navbar";
+import { useState } from "react";
+import { AuthContext } from "./components/Context/AuthContext";
+import { RequireAuth } from "./components/Context/RequireAuth";
 function App() {
+  //keep track of login state in global
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <>
       <Router>
-        <Routes>
-          <Route path="/" element={<Signup/>} />
-        </Routes>
+        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+          <Navbar />
+          <div className="container">
+            <Routes>
+              {/* <Route path="/" element={<RequireAuth><Home /></RequireAuth>} /> */}
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </div>
+        </AuthContext.Provider>
       </Router>
     </>
   );

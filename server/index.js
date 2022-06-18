@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const mongooseDB = require("./db");
 const userRoute = require("./routes/user");
-
+const authRoute = require("./routes/auth");
 const PORT = process.env.PORT;
 
 //connect to mongoDB
@@ -16,6 +16,7 @@ app.use(express.json());
 
 //routing
 app.use("/user", userRoute);
+app.use("/auth", authRoute)
 
 app.get("/", (req, res) => {
     res.send("API home");

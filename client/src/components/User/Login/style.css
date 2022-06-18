@@ -1,0 +1,33 @@
+.loginContainer{
+    padding: 10px;
+    border: yellow 2px solid;
+    width: 500px;
+    border-radius: 10px;
+}
+
+.loginBtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid green;
+    background-color: transparent;
+    color: green;
+}
+.loginBtn:hover {
+    background-color: green;
+    color: white;
+}
+
+#loginFrom{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#loginFrom > input{
+    height: 30px;
+}
+
+.notice{
+    color: red;
+}

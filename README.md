@@ -1,12 +1,12 @@
 # CouponJars
+- a website that store user-provided coupon codes for uses. Saving your wallet, one penny at a time.
 
 
-
-# React
+# React Client
 ## Dependency
-- axios
+- **Axios**
   - for http calls
-- react router-dom
+- **React router-dom**
   - for component routing
 
 
@@ -14,16 +14,48 @@
 # Server
 
 ## Dependency
-- dotenv
+- **Dotenv**
   - for storing secret keys
-- jsonwebtoken
+- **Jsonwebtoken**
   - for user authentication
-- bcrypt
+- **Bcrypt**
   - for hashing passwords
-- nodemon
-  - auto restart on file changes
+- **Nodemon**
+  - auto restart server on file changes
+- **Express**
+  - for building server using Nodejs
+- **Joi**
+  - for validating database models
+- **Mongoose**
+  - for creating connections between MongoDB and the Express
+- **Cors**
+  - for allowing cross-origin HTTP requests
 
 # Program used
-- Visual studio code
+- Visual Studio Code
 - Postman
-- 
+- MongoDB Compass
+
+# Server .env setup
+```js
+PORT = 3001 //Your server port number, default is 3001
+DB_PATH = //Your MongoDB database path
+SECRET_KEY = //Your JWT secret key
+```
+
+# Route Logics
+## User Route
+- **POST:** **```/signup```**
+  - First, check if user email ID already exists by searching in the database using ```findOne()```
+    - **If exists**, return status code ```409```
+  - If not exists,
+    - Hash the user password using ```bcrypt```
+    - Add a new record if not exists
+  - return status code ```500```, if any errors arise
+
+- **POST:** **```/login```**
+  - First check if user email ID is exists or not
+    - **If exists**, compare the inputted password with the hashed password
+      - **If matched**, sign the payload using ```jsonwebtoken``` and return back the token to the user
+      - **If not exists**, return status code ```401```
+  - Return status code ```500```, if any errors arise

@@ -1,0 +1,31 @@
+#navbar{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(177, 173, 173);
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.logo-container{
+   display: flex;
+   font-size: 30px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.searchTab{
+    margin-right: 100px;
+    display: flex;
+    width: 80%;
+}
+.searchTab > input{
+    height: 38px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 20px;
+}
