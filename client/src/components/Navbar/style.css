@@ -29,3 +29,30 @@ a {
     padding: 8px;
     font-size: 20px;
 }
+
+.loginBtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid green;
+    background-color: transparent;
+    color: green;
+}
+.loginBtn:hover {
+    background-color: green;
+    color: white;
+}
+
+
+.signoutBtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid red;
+    background-color: transparent;
+    color: red;
+}
+.signoutBtn:hover {
+    background-color: red;
+    color: white;
+}
