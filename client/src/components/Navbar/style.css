@@ -30,6 +30,16 @@ a {
     font-size: 20px;
 }
 
+.user-panel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+}
+
+
+
 .loginBtn{
     width: 100px;
     height: 30px;

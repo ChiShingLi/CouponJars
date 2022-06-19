@@ -1,6 +1,6 @@
 import "./style.css"
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../Context/AuthContext";
 
@@ -44,17 +44,19 @@ const Login = (props) => {
 
     return (
         <>
-            <div className="loginContainer">
-                <h1>Member Login</h1>
-                <hr />
-                <form id="loginFrom" onSubmit={handleSubmit}>
-                    <input type="text" name="email" id="email" placeholder="Email" value={userObj.email} onChange={(event) => setuserObj({ ...userObj, [event.target.name]: event.target.value })} required />
-                    <input type="password" name="password" id="password" placeholder="Password" value={userObj.password} onChange={(event) => setuserObj({ ...userObj, [event.target.name]: event.target.value })} required />
-                    <button className="loginBtn">Login</button>
-                    {showMessage ? <div className="notice">{message}</div> : <></>}
-                </form>
-                <hr />
-                <b>Don't have an account yet?</b> Sign up
+            <div className="wrapper">
+                <div className="loginContainer">
+                    <h1>Member Login</h1>
+                    <hr />
+                    <form id="loginFrom" onSubmit={handleSubmit}>
+                        <input type="text" name="email" id="email" placeholder="Email" value={userObj.email} onChange={(event) => setuserObj({ ...userObj, [event.target.name]: event.target.value })} required />
+                        <input type="password" name="password" id="password" placeholder="Password" value={userObj.password} onChange={(event) => setuserObj({ ...userObj, [event.target.name]: event.target.value })} required />
+                        <button className="loginBtn">Login</button>
+                        {showMessage ? <div className="notice">{message}</div> : <></>}
+                    </form>
+                    <hr />
+                    <b>Don't have an account yet?</b> <Link to="/signup">Sign up</Link>
+                </div>
             </div>
         </>
     );

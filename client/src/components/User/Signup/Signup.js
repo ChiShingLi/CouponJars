@@ -1,7 +1,7 @@
 import "./style.css"
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 
 const Signup = () => {
@@ -56,7 +56,7 @@ const Signup = () => {
     }
 
     return (
-        <>
+        <div className="wrapper">
             <div className="signupContainer">
                 <h1>Join Now!</h1>
                 <hr />
@@ -68,9 +68,9 @@ const Signup = () => {
                     {showMessage ? <div className="notice">{message}</div> : <></>}
                 </form>
                 <hr />
-                <b>Already registered?</b> Login
+                <b>Already registered?</b> <Link to ="/login">Login</Link>
             </div>
-        </>
+        </div>
     );
 }
 

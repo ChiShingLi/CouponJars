@@ -1,3 +1,10 @@
+.wrapper{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .signupContainer{
     padding: 10px;
     border: yellow 2px solid;

@@ -1,0 +1,35 @@
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(88, 87, 87);
+    border-radius: 5px;
+    width: auto;
+}
+
+.right-content{
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.right-content > input{
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.date-content{
+    font-size: 10px;
+}
+
+.interaction-content{
+    display: flex;
+}
+
+.rating{
+    width: 50%;
+}
+
+.comments{
+    width: 50%;
+}

@@ -1,0 +1,7 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.header-content{
+    justify-items: center;
+}

@@ -1,11 +1,14 @@
 import Signup from "./components/User/Signup/Signup";
 import Login from "./components/User/Login/Login";
 import Home from "./components/Home/Home"
+import Account from "./components/User/Account/Account";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
 import { AuthContext } from "./components/Context/AuthContext";
 import { RequireAuth } from "./components/Context/RequireAuth";
+import Coupon from "./components/Coupon/Coupon";
+
 function App() {
   //keep track of login state in global
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,6 +23,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/account" element={<RequireAuth><Account/></RequireAuth>} />
+              <Route path="/test" element={<Coupon />} />
             </Routes>
           </div>
         </AuthContext.Provider>
