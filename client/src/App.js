@@ -8,6 +8,7 @@ import { useState } from "react";
 import { AuthContext } from "./components/Context/AuthContext";
 import { RequireAuth } from "./components/Context/RequireAuth";
 import Coupon from "./components/Coupon/Coupon";
+import CreatePost from "./components/Coupon/Create/Create"
 
 function App() {
   //keep track of login state in global
@@ -25,6 +26,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/account" element={<RequireAuth><Account/></RequireAuth>} />
               <Route path="/test" element={<Coupon />} />
+              <Route path="/post/create" element={<RequireAuth><CreatePost /></RequireAuth>} />
             </Routes>
           </div>
         </AuthContext.Provider>

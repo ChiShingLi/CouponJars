@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 
 const postSchema = mongoose.Schema({
+    poster: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
+    },
     category: {
-        type: Number
+        type: String,
+        required: true
     },
     title: {
         type: String,
@@ -15,7 +20,7 @@ const postSchema = mongoose.Schema({
     code: {
         type: String
     },
-    expireDate:{
+    expiryDate: {
         type: Date
     },
     likes: [

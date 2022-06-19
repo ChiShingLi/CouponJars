@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 isValidAuth = (token) => {
     try {
         jwt.verify(token, process.env.SECRET_KEY);
-        //return back decoded user
         return true
     } catch (error) {
         return false;
@@ -16,15 +15,18 @@ function validateAuth(req, res, next) {
         const token = req.header("authorization").split(" ")[1];
         const isValid = isValidAuth(token);
         if (isValid !== null) {
-            console.log("valid auth")
+            //store decoded data in request
+            req.decoded = jwt.decode(token, process.env.SECRET_KEY);
+
+            //valid token
             next();
             return;
         } else {
-            console.log("invalid auth")
-            res.send("error")
+            //invalid token
+            return res.status(401).send({ message: "Unauthorized Token." });
         }
     } catch (error) {
-        res.send("ERROR getting token")
+        return res.status(500).send({ message: "Internal authentication server error." });
     }
 
 }

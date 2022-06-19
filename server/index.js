@@ -18,7 +18,7 @@ app.use(express.json());
 //routing
 app.use("/user", userRoute);
 app.use("/auth", authRoute);
-app.use("/post/", postRoute);
+app.use("/post", postRoute);
 
 app.get("/", (req, res) => {
     res.send("API home");

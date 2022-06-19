@@ -8,7 +8,6 @@ const checkValid = async () => {
             Authorization: `Bearer ${localStorage.getItem("token")}`
         }
     })
-    console.log(`STATUS----> ${status.data}`);
     return status.data;
 }
 

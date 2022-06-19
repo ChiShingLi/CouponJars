@@ -14,7 +14,6 @@
 }
 
 a {
-    color: inherit;
     text-decoration: none;
 }
 .searchTab{
@@ -35,10 +34,16 @@ a {
     justify-content: space-between;
     align-items: center;
     gap: 8px;
-
 }
 
-
+.createBtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid green;
+    background-color: rgb(157, 157, 238);
+    color: green;
+}
 
 .loginBtn{
     width: 100px;

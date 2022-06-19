@@ -18,19 +18,20 @@ const Navbar = () => {
             <div className="logo-container">
                 <a href="/">CouponJars</a>
             </div>
-            <div className="searchTab">
+            {/* <div className="searchTab">
                 <input type="text" name="searchText" id="searchText" placeholder="Enter website name" />
-            </div>
+            </div> */}
             <div className="user-panel">
-                {!isLoggedIn || localStorage.getItem("token") == null ?
+                {!isLoggedIn && localStorage.getItem("token") == null ?
                     <></>
                     :
                     <div className="myAccount">
+                        <Link to="/post/create"><button className="createBtn">Create</button></Link>
                         <Link to="/account">Account</Link>
                     </div>
                 }
                 <div className="user-btn">
-                    {!isLoggedIn || localStorage.getItem("token") == null ? <Link to="/login"><button className="loginBtn">Login</button></Link> : <button className="signoutBtn" onClick={() => handleSignOut()}>LogOut</button>}
+                    {!isLoggedIn && localStorage.getItem("token") == null ? <Link to="/login"><button className="loginBtn">Login</button></Link> : <button className="signoutBtn" onClick={() => handleSignOut()}>LogOut</button>}
                 </div>
             </div>
         </div>
