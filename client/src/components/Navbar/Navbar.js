@@ -2,7 +2,8 @@ import "./style.css"
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-
+import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as AddIcon } from "../../images/add.svg";
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -16,18 +17,20 @@ const Navbar = () => {
     return (
         <div id="navbar">
             <div className="logo-container">
-                <a href="/">CouponJars</a>
+                <a href="/"><Logo alt="CouponJars" height="55px" /></a>
+                CouponJars
             </div>
             {/* <div className="searchTab">
                 <input type="text" name="searchText" id="searchText" placeholder="Enter website name" />
             </div> */}
             <div className="user-panel">
+
                 {!isLoggedIn && localStorage.getItem("token") == null ?
                     <></>
                     :
                     <div className="myAccount">
-                        <Link to="/post/create"><button className="createBtn">Create</button></Link>
-                        <Link to="/account">Account</Link>
+                        <Link to="/post/create"><button className="createBtn"> <AddIcon id="addIcon" fill="white" height="15px" />Add</button></Link>
+                        <Link to="/account"><button className="accountBtn">Account</button></Link>
                     </div>
                 }
                 <div className="user-btn">

@@ -14,10 +14,9 @@ function validateAuth(req, res, next) {
     try {
         const token = req.header("authorization").split(" ")[1];
         const isValid = isValidAuth(token);
-        if (isValid !== null) {
+        if (isValid) {
             //store decoded data in request
             req.decoded = jwt.decode(token, process.env.SECRET_KEY);
-
             //valid token
             next();
             return;

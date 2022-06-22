@@ -7,7 +7,7 @@ const postValidateSchema = Joi.object({
     description: Joi.string().required().label("description"),
     code: Joi.string().optional().allow("").label("coupon code"),
     expiryDate: Joi.date().format("YYYY-MM-DD").optional().allow("").label("expiry date"),
-    likes: Joi.object().optional().allow("").label("likes")
+    likes: Joi.number().optional().label("likes")
 });
 
 module.exports = {

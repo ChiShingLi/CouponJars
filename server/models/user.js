@@ -1,3 +1,4 @@
+const { object } = require("joi");
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
@@ -9,6 +10,9 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    likes:[
+       {type: Object}
+    ]
 }, { timestamps: true });
 
 module.exports = mongoose.model("user", userSchema);

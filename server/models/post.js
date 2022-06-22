@@ -23,11 +23,10 @@ const postSchema = mongoose.Schema({
     expiryDate: {
         type: Date
     },
-    likes: [
-        {
-            type: mongoose.Schema.Types.ObjectId
-        }
-    ]
+    likes:{
+        type: Number,
+        default : 0
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("post", postSchema);

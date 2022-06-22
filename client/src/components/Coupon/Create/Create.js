@@ -57,7 +57,7 @@ const Create = () => {
             <h1>Submit Coupon Codes!</h1>
             <form id="createForm" onSubmit={handleSubmit}>
                 <select name="category" onChange={(event) => setPostObj({ ...postObj, [event.target.name]: event.target.value })}>
-                    <option value="uncategorized" selected>Uncategorized</option>
+                    <option value="uncategorized" defaultValue="uncategorized">Uncategorized</option>
                     <option value="autos">Autos</option>
                     <option value="electronic">Electronics</option>
                     <option value="homeImprovement">Home Improvement</option>

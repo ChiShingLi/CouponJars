@@ -1,35 +1,54 @@
-.wrapper{
+.wrapper-grid{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border: 1px solid rgb(88, 87, 87);
     border-radius: 5px;
-    width: auto;
+    margin: 10px 8px 10px 8px;
+    width: 300px;
+    height: auto;
+}
+
+.coupon-content{
+   
 }
 
 .right-content{
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
     display: flex;
     flex-direction: column;
 }
+
 .right-content > input{
   height: 50px;
   font-size: 20px;
   font-weight: bold;
 }
 
-.date-content{
-    font-size: 10px;
-}
-
 .interaction-content{
     display: flex;
+    margin-top: 10px;
 }
 
 .rating{
+    display: flex;
     width: 50%;
+    font-size: 15px;
 }
 
 .comments{
     width: 50%;
+}
+
+.date-content{
+    display: flex;
+    font-size: 13px;
+}
+
+.desc-content{
+    display: inline-block;
+    width: 290px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
 }

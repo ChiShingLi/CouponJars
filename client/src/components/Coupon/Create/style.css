@@ -15,7 +15,8 @@
 }
 
 #createForm > textarea{
-    height: 80px;
+    min-height: 80px;
+    resize: vertical;
  }
 
 .submitBtn{
