@@ -3,7 +3,10 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const { userValidateSchema } = require("../helpers/userValidateSchema");
+const { validateAuth } = require("../middleware/validateAuth");
+const user = require("../models/user");
 
+//POST - signup
 router.post("/signup", async (req, res) => {
     try {
         //validate requests
@@ -23,8 +26,10 @@ router.post("/signup", async (req, res) => {
     } catch (error) {
         return res.status(500).send({ message: "Internal server error." });
     }
-})
+});
 
+
+// POST - login
 router.post("/login", async (req, res) => {
     try {
         const reqObj = req.body;
@@ -47,6 +52,29 @@ router.post("/login", async (req, res) => {
         console.log(error)
         return res.status(500).send({ message: "Internal server error." });
     }
-})
+});
+
+//PATCH - change password
+router.patch("/changePassword", validateAuth, async (req, res) => {
+    try {
+        //check if user tries to use the same password
+        if(req.body.currentPassword === req.body.newPassword) return res.status(500).send({ message: "Internal server error." });
+        
+        //find the user by id and compare their password with the hashed version from the db
+        const userObj = await User.findById(req.decoded._id);
+        const isPasswordMatch = await bcrypt.compare(req.body.currentPassword, userObj.password);
+        if (isPasswordMatch) {
+            //rehash the new password
+            const newPassword = await bcrypt.hash(req.body.newPassword, 10);
+            await User.findByIdAndUpdate(req.decoded._id, { $set: { password: newPassword } });
+            return res.status(200).send({ message: "Password updated successfully." })
+        } else {
+            return res.status(401).send({ message: "Incorrect email or password." })
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({ message: "Internal server error." });
+    }
+});
 
 module.exports = router;

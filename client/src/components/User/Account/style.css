@@ -1,0 +1,58 @@
+.account-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    padding: 8px;
+    border: 1px black solid;
+    border-radius: 5px;
+    width: 400px;
+    height: auto;
+    box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
+}
+
+#changePasswordForm{
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#changePasswordForm > input{
+    height: 30px;
+}
+
+#submitBtn{
+    font-size: 20px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid green;
+    background-color: transparent;
+    color: green;
+}
+#submitBtn:hover {
+    background-color: green;
+    color: white;
+}
+
+
+.notice-error{
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid red;
+    background-color: pink;
+    border-radius: 2px;
+    color: red;
+}
+
+.notice-success{
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid green;
+    background-color: rgba(166, 236, 166, 0.856);
+    border-radius: 2px;
+    color: green;
+}

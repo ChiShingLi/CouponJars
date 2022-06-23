@@ -4,9 +4,13 @@
 }
 
 #createForm{
+    padding: 8px;
     display: flex;
     flex-direction: column;
     gap:10px;
+    border: 1px black solid;
+    border-radius: 10px;
+    box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
 }
 
 #createForm > input{

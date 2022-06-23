@@ -6,10 +6,7 @@
     margin: 10px 8px 10px 8px;
     width: 300px;
     height: auto;
-}
-
-.coupon-content{
-   
+    box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
 }
 
 .right-content{

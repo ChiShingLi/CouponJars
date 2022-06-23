@@ -7,9 +7,10 @@
 
 .signupContainer{
     padding: 10px;
-    border: yellow 2px solid;
+    border: 1px black solid;
     width: 500px;
     border-radius: 10px;
+    box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
 }
 
 .signupBtn{
