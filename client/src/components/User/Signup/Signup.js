@@ -40,7 +40,7 @@ const Signup = () => {
             setShowMessage(true);
         } else {
             //submit to server
-            axios.post("http://localhost:3001/user/signup", userObj).then((res) => {
+            axios.post(`${process.env.REACT_APP_DATABASE_URL}/user/signup`, userObj).then((res) => {
                 //TODO:redirect to home
                 redirect();
 

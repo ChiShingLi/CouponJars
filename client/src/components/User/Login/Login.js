@@ -25,7 +25,7 @@ const Login = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         //submit to server
-        axios.post("http://localhost:3001/user/login", userObj).then((res) => {
+        axios.post(`${process.env.REACT_APP_DATABASE_URL}/user/login`, userObj).then((res) => {
 
             localStorage.setItem("token", res.data.token);
             //TODO:redirect to home

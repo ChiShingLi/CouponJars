@@ -3,7 +3,7 @@ import axios from "axios";
 
 const checkValid = async () => {
     //get with bearer token header
-    const status = await axios.get("http://localhost:3001/auth/isValidAuth", {
+    const status = await axios.get(`${process.env.REACT_APP_DATABASE_URL}/auth/isValidAuth`, {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
         }

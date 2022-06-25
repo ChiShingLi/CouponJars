@@ -56,7 +56,7 @@ const Account = () => {
         event.preventDefault();
         //if input field is not empty, trim leading and ending whitespaces
         if (displayName !== "") {
-            axios.patch("http://localhost:3001/user/changeName/", { displayName: displayName.trim() }, {
+            axios.patch(`${process.env.REACT_APP_DATABASE_URL}/user/changeName/`, { displayName: displayName.trim() }, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }

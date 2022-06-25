@@ -12,7 +12,7 @@ const Coupon = (props) => {
     const navigate = useNavigate();
 
     const handleLike = () => {
-        axios.patch("http://localhost:3001/post/like", { postId: _id }, {
+        axios.patch(`${process.env.REACT_APP_DATABASE_URL}/post/like`, { postId: _id }, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }

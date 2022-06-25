@@ -10,8 +10,14 @@
   - for component routing
 - **MomentJS**
   - for format date and time
-
-
+- **React-spinners**
+  - for loading spinners indicator when fetching http resources
+  - 
+# Client .env setup
+- environment variables must start with ```REACT_APP```
+```js
+REACT_APP_DATABASE_URL="http://localhost:3001"
+```
 
 # Server
 

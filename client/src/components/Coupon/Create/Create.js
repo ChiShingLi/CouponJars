@@ -39,7 +39,7 @@ const Create = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:3001/post/", postObj, {
+        axios.post(`${process.env.REACT_APP_DATABASE_URL}/post/`, postObj, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }

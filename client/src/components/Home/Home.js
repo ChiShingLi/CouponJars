@@ -8,7 +8,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get("http://localhost:3001/post").then((res)=>{
+            const res = await axios.get(`${process.env.REACT_APP_DATABASE_URL}/post`).then((res)=>{
                 setPostData(res.data);
                 setLoading(false);
             })
