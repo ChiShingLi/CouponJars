@@ -88,6 +88,8 @@ router.patch("/changePassword", validateAuth, async (req, res) => {
 //PATCH - Change display name
 router.patch("/changeName", validateAuth, async (req, res) => {
     try {
+        const taken = await User.findOne({displayName: req.body.displayName});
+        if(taken) return res.status(409).send({message: "Display name is already taken."})
         await User.findByIdAndUpdate(req.decoded._id, {displayName: req.body.displayName});
         return res.status(200).send({ message: "Display name updated successfully." })
     } catch (error) {

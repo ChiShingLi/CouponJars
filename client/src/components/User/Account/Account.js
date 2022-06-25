@@ -69,6 +69,8 @@ const Account = () => {
             }).catch((err) => {
                 if (err.response.status === 401) {
                     handleMessage(false, "Email or Password is incorrect.");
+                } else if (err.response.status === 409) {
+                    handleMessage(false, "Display name already taken.");
                 } else {
                     handleMessage(false, "Please try again later...");
                 }

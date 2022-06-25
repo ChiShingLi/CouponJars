@@ -1,7 +1,6 @@
 # CouponJars
 - a website that store user-provided coupon codes for uses. Saving your wallet, one penny at a time.
 
-
 # React Client
 ## Dependency
 - **Axios**
@@ -12,7 +11,7 @@
   - for format date and time
 - **React-spinners**
   - for loading spinners indicator when fetching http resources
-  - 
+
 # Client .env setup
 - environment variables must start with ```REACT_APP```
 ```js
@@ -72,6 +71,37 @@ SECRET_KEY = //Your JWT secret key
       - **If not exists**, return status code ```401```
   - Return status code ```500```, if any errors arise
 
+
+<hr>
+
+- **PATCH:** **```/changePassword```**
+ - user's token is validated by ```validateAuth``` middleware and the input schema is valid
+  - if the user's token is...
+    - **VALID:**
+      - check if the user's current password is equal to the new password
+        - if same, return back status code ```500```
+      - get find the user in the database based on their ```_id```
+      - check & validate again if their current password after hashing is same as the hashed password in the database
+        - if true, hash the new password and update their password into the database
+        - return back status code ```200```
+    - **INVALID:** 
+      - return back status code ```500```
+
+<hr>
+
+- **PATCH:** **```/changeName```**
+- **Note:** the default user's display name is ```null```
+  - user's token is validated by ```validateAuth``` middleware and the input schema is valid
+    - if the user's token is...
+      - **VALID:**
+        - check if the user's display name is already taken
+          - if true, return back status code ```409```
+        - else, find the user's record by their ```_.id```
+        - update their display name
+        - return back status code ```200```
+      - **INVALID:** 
+        - return back status code ```500```
+
 ## Post Route
 
 - **POST:** **```/post```**
@@ -97,7 +127,6 @@ SECRET_KEY = //Your JWT secret key
      - return back status code ```201```
     - **INVALID:** 
       - return back status code ```500```
-
 
 # TODO:
 - only allow user to like a post that they havn't liked before
