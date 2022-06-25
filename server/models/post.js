@@ -5,6 +5,9 @@ const postSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
+    posterName:{
+        type: String
+    },
     category: {
         type: String,
         required: true

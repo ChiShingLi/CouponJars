@@ -14,18 +14,18 @@
     box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
 }
 
-#changePasswordForm{
+#changePasswordForm, #changeDisplayNameForm{
     gap: 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#changePasswordForm > input{
+input {
     height: 30px;
 }
 
-#submitBtn{
+#changePasswordBtn, #changeNameBtn{
     font-size: 20px;
     height: 30px;
     border-radius: 4px;
@@ -33,7 +33,7 @@
     background-color: transparent;
     color: green;
 }
-#submitBtn:hover {
+#changePasswordBtn:hover, #changeNameBtn:hover{
     background-color: green;
     color: white;
 }

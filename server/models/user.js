@@ -1,7 +1,10 @@
-const { object } = require("joi");
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
+    displayName:{
+        type: String,
+        default: null
+    },
     email: {
         type: String,
         required: true

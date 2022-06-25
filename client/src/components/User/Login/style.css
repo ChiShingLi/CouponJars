@@ -38,3 +38,8 @@
 .notice{
     color: red;
 }
+
+.signup-link{
+    display: inline;
+    color: #FAA85F;
+}

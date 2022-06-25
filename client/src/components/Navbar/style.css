@@ -9,15 +9,25 @@
 }
 
 .logo-container{
-    padding-top: 10px;
+   padding-top: 10px;
    display: flex;
    justify-content: center;
    align-items: center;
    font-size: 30px;
 }
+.left-continer{
+    padding-top: 8px;
+    margin-left: 30px;
+    font-size: 25px;
+}
 
-a {
+a, a:visited {
+    color: black;
     text-decoration: none;
+}
+
+a:hover{
+    color: #F8CF26;
 }
 .searchTab{
     margin-right: 100px;

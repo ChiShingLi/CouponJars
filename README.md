@@ -83,7 +83,7 @@ SECRET_KEY = //Your JWT secret key
 
 - **PATCH:** **```/post/like```**
 - user's token is validated by ```validateAuth``` middleware and the input schema is valid
--  - if the user's token is...
+- if the user's token is...
     - **VALID:**
       - allow the user to like the post
       - increment the post's like count by ```1```

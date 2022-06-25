@@ -55,7 +55,7 @@ const Login = (props) => {
                         {showMessage ? <div className="notice">{message}</div> : <></>}
                     </form>
                     <hr />
-                    <b>Don't have an account yet?</b> <Link to="/signup">Sign up</Link>
+                    <b>Don't have an account yet?</b> <Link to="/signup"> <div className="signup-link"><div className="login-link">Sign up</div></div></Link>
                 </div>
             </div>
         </>

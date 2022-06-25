@@ -2,13 +2,14 @@ import Signup from "./components/User/Signup/Signup";
 import Login from "./components/User/Login/Login";
 import Home from "./components/Home/Home"
 import Account from "./components/User/Account/Account";
+import About from "./components/About/About"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
 import { AuthContext } from "./components/Context/AuthContext";
 import { RequireAuth } from "./components/Context/RequireAuth";
-import Coupon from "./components/Coupon/Coupon";
 import CreatePost from "./components/Coupon/Create/Create"
+
 
 function App() {
   //keep track of login state in global
@@ -24,8 +25,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/about" element={<About />} />
               <Route path="/account" element={<RequireAuth><Account/></RequireAuth>} />
-              <Route path="/test" element={<Coupon />} />
               <Route path="/post/create" element={<RequireAuth><CreatePost /></RequireAuth>} />
             </Routes>
           </div>

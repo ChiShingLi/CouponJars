@@ -17,8 +17,8 @@ router.get("/", async (req, res) => {
 //create new post
 router.post("/", validateAuth, async (req, res) => {
     try {
-        const userData = req.decoded;
-        const reqObj = await postValidateSchema.validateAsync({ ...req.body, poster: userData._id });
+        const userData = await User.findById(req.decoded._id) //refetch user's data
+        const reqObj = await postValidateSchema.validateAsync({ ...req.body, poster: userData._id, posterName: userData.displayName });
         await new Post({ ...reqObj, poster: userData._id }).save();
         return res.status(201).send({ message: "Post created successfully." })
     } catch (error) {

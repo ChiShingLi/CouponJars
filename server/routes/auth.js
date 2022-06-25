@@ -11,7 +11,8 @@ isValidAuth = (token) => {
     }
 }
 
-router.get('/isValidAuth', (req, res) => {
+//check if user token is valid
+router.get("/isValidAuth", (req, res) => {
     try {
         //extract the token from header
         if (req.header("authorization") !== "" || req.header("authorization") !== null) {

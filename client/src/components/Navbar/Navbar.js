@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as AddIcon } from "../../images/add.svg";
-
+import { ReactComponent as AboutIcon } from "../../images/about.svg";
 const Navbar = () => {
     const navigate = useNavigate();
     const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
@@ -19,7 +19,11 @@ const Navbar = () => {
             <div className="logo-container">
                 <a href="/"><Logo alt="CouponJars" height="55px" /></a>
                 CouponJars
+                <div className="left-continer">
+                    <Link to="/about"><AboutIcon width="25px"/>About</Link>
+                </div>
             </div>
+
             {/* <div className="searchTab">
                 <input type="text" name="searchText" id="searchText" placeholder="Enter website name" />
             </div> */}

@@ -24,7 +24,7 @@ const Create = () => {
 
     //display message
     const handleMessage = (valid, message) => {
-        if (valid == true) {
+        if (valid === true) {
             //display success message
             setShowMessage(true);
             setShowErrMessage(false);

@@ -6,6 +6,15 @@ const { userValidateSchema } = require("../helpers/userValidateSchema");
 const { validateAuth } = require("../middleware/validateAuth");
 const user = require("../models/user");
 
+//GET - get current user
+router.get("/", validateAuth, async (req, res) => {
+    try {
+        return res.status(200).send(req.decoded);
+    } catch (error) {
+        return res.status(500).send({ message: "Internal server error." });
+    }
+});
+
 //POST - signup
 router.post("/signup", async (req, res) => {
     try {
@@ -58,8 +67,8 @@ router.post("/login", async (req, res) => {
 router.patch("/changePassword", validateAuth, async (req, res) => {
     try {
         //check if user tries to use the same password
-        if(req.body.currentPassword === req.body.newPassword) return res.status(500).send({ message: "Internal server error." });
-        
+        if (req.body.currentPassword === req.body.newPassword) return res.status(500).send({ message: "Internal server error." });
+
         //find the user by id and compare their password with the hashed version from the db
         const userObj = await User.findById(req.decoded._id);
         const isPasswordMatch = await bcrypt.compare(req.body.currentPassword, userObj.password);
@@ -72,7 +81,16 @@ router.patch("/changePassword", validateAuth, async (req, res) => {
             return res.status(401).send({ message: "Incorrect email or password." })
         }
     } catch (error) {
-        console.log(error)
+        return res.status(500).send({ message: "Internal server error." });
+    }
+});
+
+//PATCH - Change display name
+router.patch("/changeName", validateAuth, async (req, res) => {
+    try {
+        await User.findByIdAndUpdate(req.decoded._id, {displayName: req.body.displayName});
+        return res.status(200).send({ message: "Display name updated successfully." })
+    } catch (error) {
         return res.status(500).send({ message: "Internal server error." });
     }
 });

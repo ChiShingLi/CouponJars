@@ -68,7 +68,7 @@ const Signup = () => {
                     {showMessage ? <div className="notice">{message}</div> : <></>}
                 </form>
                 <hr />
-                <b>Already registered?</b> <Link to ="/login">Login</Link>
+                <b>Already registered?</b> <Link to ="/login"><div className="login-link">Login</div></Link>
             </div>
         </div>
     );

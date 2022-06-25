@@ -1,0 +1,22 @@
+.about-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border: 1px solid rgb(88, 87, 87);
+    border-radius: 5px;
+    margin: 10px 8px 10px 8px;
+    width: 50%;
+    box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
+}
+
+.about-content > .title, .desc{
+    justify-self: center;
+    align-self: center;
+}

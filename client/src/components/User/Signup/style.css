@@ -39,3 +39,9 @@
 .notice{
     color: red;
 }
+
+
+.login-link{
+    display: inline;
+    color: #FAA85F;
+}
