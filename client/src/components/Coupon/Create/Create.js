@@ -52,10 +52,33 @@ const Create = () => {
         });
     }
 
+    //convert image to base64
+    const convertBase64 = (imageFile) => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(imageFile);
+
+            fileReader.onload = () => {
+                resolve(fileReader.result);
+            };
+
+            fileReader.onerror = (error) => {
+                reject(error);
+            };
+        });
+    }
+
+    const handleImage = async (e) => {
+        const imageFile = e.target.files[0];
+        const base64 = await convertBase64(imageFile);
+        setPostObj({ ...postObj, image: base64 });
+    }
+
     return (
         <div className="wrapper">
             <h1>Submit Coupon Codes!</h1>
             <form id="createForm" onSubmit={handleSubmit}>
+
                 <select name="category" onChange={(event) => setPostObj({ ...postObj, [event.target.name]: event.target.value })}>
                     <option value="uncategorized" defaultValue="uncategorized">Uncategorized</option>
                     <option value="autos">Autos</option>
@@ -68,6 +91,8 @@ const Create = () => {
                 <textarea type="text" name="description" id="description" placeholder="Description" required onChange={(event) => setPostObj({ ...postObj, [event.target.name]: event.target.value })} />
                 <input type="text" name="code" id="code" placeholder="Coupon Code (Optional)" onChange={(event) => setPostObj({ ...postObj, [event.target.name]: event.target.value })} />
                 <input type="date" name="expiryDate" id="expiryDate" placeholder="Expiry Date" onChange={(event) => setPostObj({ ...postObj, [event.target.name]: event.target.value })} />
+                <label htmlFor="postPhoto">Image (Optional):</label>
+                <input type="file" name="postPhoto" id="postPhoto" accept="image/png, image/gif, image/jpeg" onChange={handleImage} />
                 <button className="submitBtn" type="submit">Submit</button>
             </form>
             {showMessage ? <div className="notice-success">{message}</div> : <></>}

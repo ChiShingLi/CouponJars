@@ -49,3 +49,11 @@
     overflow: hidden !important;
     text-overflow: ellipsis;
 }
+
+.image-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}

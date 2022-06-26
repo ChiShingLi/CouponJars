@@ -4,9 +4,9 @@ import { ReactComponent as LikeIcon } from "../../images/like.svg";
 import { useState } from "react";
 import moment from 'moment';
 import { useNavigate } from "react-router-dom";
-
+import { ReactComponent as NoImageIcon } from "../../images/noImage.svg";
 const Coupon = (props) => {
-    const { _id, title, description, code, createdAt, likes, posterName } = props.data;
+    const { _id, image, title, description, code, createdAt, likes, posterName } = props.data;
     const formatDate = moment(createdAt).format("MMM DD, YYYY");
     const [likeCount, setlikeCount] = useState(likes);
     const navigate = useNavigate();
@@ -25,8 +25,8 @@ const Coupon = (props) => {
     return (
         <div className="wrapper-grid">
             <div className="coupon-content">
-                <div className="left-content">
-                    <img src="http://placehold.jp/300x120.png" alt="coupon photo"/>
+                <div className="image-content">
+                    {image ? <img src={image} height="120px" /> : <NoImageIcon width="300px" height="120px" />}
                 </div>
                 <div className="right-content">
                     <b>{title}</b>

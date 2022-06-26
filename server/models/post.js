@@ -6,7 +6,12 @@ const postSchema = mongoose.Schema({
         required: true
     },
     posterName:{
-        type: String
+        type: String,
+        default: null
+    },
+    image:{
+        type: String,
+        default: null
     },
     category: {
         type: String,
@@ -24,7 +29,8 @@ const postSchema = mongoose.Schema({
         type: String
     },
     expiryDate: {
-        type: Date
+        type: Date,
+        default: null
     },
     likes:{
         type: Number,
