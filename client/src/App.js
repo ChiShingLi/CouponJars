@@ -9,6 +9,7 @@ import { useState } from "react";
 import { AuthContext } from "./components/Context/AuthContext";
 import { RequireAuth } from "./components/Context/RequireAuth";
 import CreatePost from "./components/Coupon/Create/Create"
+import Detail from "./components/Coupon/Detail/Detail";
 
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/about" element={<About />} />
-              <Route path="/account" element={<RequireAuth><Account/></RequireAuth>} />
+              <Route path="/account" element={<RequireAuth><Account /></RequireAuth>} />
               <Route path="/post/create" element={<RequireAuth><CreatePost /></RequireAuth>} />
+              <Route path="/post/detail/:id" element={<Detail />} />
             </Routes>
           </div>
         </AuthContext.Provider>

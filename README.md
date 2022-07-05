@@ -128,5 +128,17 @@ SECRET_KEY = //Your JWT secret key
     - **INVALID:** 
       - return back status code ```500```
 
-# TODO:
-- only allow user to like a post that they havn't liked before
+<hr>
+
+- **PATCH:** **```/post/comment```**
+- user's token is validated by ```validateAuth``` middleware and the input schema is valid
+- if the user's token is...
+    - **VALID:**
+      - find the post object to be updated using ```findByIdAndUpdate()```
+      - **If the post is found:**
+        - push the the new comment into the existing comment's array
+        - return back status code ```201```
+      - **else:**
+        - return back status code ```500``` 
+    - **INVALID:** 
+      - return back status code ```500```

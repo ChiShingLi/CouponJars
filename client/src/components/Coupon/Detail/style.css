@@ -1,0 +1,57 @@
+.detail-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-content{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(88, 87, 87);
+    border-radius: 5px;
+    margin: 10px 8px 10px 8px;
+    width: 80%;
+    height: auto;
+    box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
+    padding: 8px;
+}
+
+.right-content > .detail-description{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    max-width: 350px;
+    gap: 8px;
+}
+
+.info-section{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#commentForm{
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;   
+}
+#commentForm > textarea{
+    min-height: 80px;
+    min-width: 100%;
+    resize: vertical;
+}
+.submitBtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid green;
+    background-color: transparent;
+    color: green;
+}
+
+.submitBtn:hover {
+    background-color: green;
+    color: white;
+}

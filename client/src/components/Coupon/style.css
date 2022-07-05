@@ -24,6 +24,7 @@
 
 .interaction-content{
     display: flex;
+    justify-content: space-between;
     margin-top: 10px;
 }
 
@@ -33,14 +34,29 @@
     font-size: 15px;
 }
 
+.commentIcon{
+    font-size: 15px;
+}
+
 .comments{
     width: 50%;
 }
 
+.commentCount{
+    display: inline;
+    position: relative;
+    bottom: 3px;
+}
 .date-content{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 13px;
 }
+.date-content > .popOut{
+    padding-bottom: 2px;
+}
+
 
 .desc-content{
     display: inline-block;

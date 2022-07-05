@@ -1,0 +1,15 @@
+.comment-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-header, .user-info{
+    align-self: flex-end;
+    color: gray;
+    font-size: 15px;
+}
+
+.comment{
+    font-size: 18px;
+}
+

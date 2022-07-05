@@ -29,6 +29,12 @@ a, a:visited {
 a:hover{
     color: #F8CF26;
 }
+
+#addIcon{
+    position: relative;
+    top: 2px;
+}
+
 .searchTab{
     margin-right: 100px;
     display: flex;

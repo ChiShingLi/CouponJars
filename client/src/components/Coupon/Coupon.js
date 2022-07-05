@@ -1,12 +1,15 @@
 import "./style.css"
 import axios from "axios";
 import { ReactComponent as LikeIcon } from "../../images/like.svg";
+import { ReactComponent as CommentIcon } from "../../images/comment.svg";
 import { useState } from "react";
 import moment from 'moment';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ReactComponent as NoImageIcon } from "../../images/noImage.svg";
+import { ReactComponent as PopOutIcon } from "../../images/popOut.svg";
+
 const Coupon = (props) => {
-    const { _id, image, title, description, code, createdAt, likes, posterName } = props.data;
+    const { _id, image, title, description, code, createdAt, likes, posterName, comments} = props.data;
     const formatDate = moment(createdAt).format("MMM DD, YYYY");
     const [likeCount, setlikeCount] = useState(likes);
     const navigate = useNavigate();
@@ -37,9 +40,20 @@ const Coupon = (props) => {
                         <div className="rating">
                             <LikeIcon alt="likes" height="18px" width="18px" onClick={() => handleLike()} /> <b>{likeCount}</b>
                         </div>
+                        <div className="comment-content">
+                            <div className="commentIcon">
+                            <Link to={`/post/detail/${_id}`}><CommentIcon height="18px" width="18px"/> <div className="commentCount"><b>{comments.length}</b></div></Link>
+                            </div>
+
+                        </div>
                     </div>
                     <div className="date-content">
-                        Posted by:	&nbsp;<b>{posterName ? posterName : "Anonymous"}</b>	&nbsp;at {formatDate}
+                        <div className="posted">
+                            Posted by:	&nbsp;<b>{posterName ? posterName : "Anonymous"}</b>	&nbsp;at {formatDate}
+                        </div>
+                        <div className="popOut">
+                            <Link to={`/post/detail/${_id}`}>More Details<PopOutIcon height="15px" width="15px" /></Link>
+                        </div>
                     </div>
                 </div>
             </div>

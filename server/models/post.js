@@ -35,7 +35,15 @@ const postSchema = mongoose.Schema({
     likes:{
         type: Number,
         default : 0
-    }
+    },
+    comments:[
+        {
+            posterId : mongoose.Schema.Types.ObjectId,
+            displayName: String,
+            comment: String,
+            date: Date,
+        }
+    ]
 }, { timestamps: true });
 
 module.exports = mongoose.model("post", postSchema);

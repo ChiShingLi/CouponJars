@@ -33,7 +33,7 @@ const Navbar = () => {
                     <></>
                     :
                     <div className="myAccount">
-                        <Link to="/post/create"><button className="createBtn"> <AddIcon id="addIcon" fill="white" height="15px" />Add</button></Link>
+                        <Link to="/post/create"><button className="createBtn"> <AddIcon id="addIcon" fill="grey" height="15px" />Add</button></Link>
                         <Link to="/account"><button className="accountBtn">Account</button></Link>
                     </div>
                 }
