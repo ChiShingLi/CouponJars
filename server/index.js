@@ -6,7 +6,7 @@ const mongooseDB = require("./db");
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/post");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 //connect to mongoDB
 mongooseDB();
