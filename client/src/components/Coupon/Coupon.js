@@ -49,7 +49,7 @@ const Coupon = (props) => {
                     </div>
                     <div className="date-content">
                         <div className="posted">
-                            Posted by:	&nbsp;<b>{posterName ? posterName : "Anonymous"}</b>	&nbsp;at {formatDate}
+                            Posted by:	&nbsp;<b>{posterName ? posterName : "Anonymous"}</b>	&nbsp;on {formatDate}
                         </div>
                         <div className="popOut">
                             <Link to={`/post/detail/${_id}`}>More Details<PopOutIcon height="15px" width="15px" /></Link>

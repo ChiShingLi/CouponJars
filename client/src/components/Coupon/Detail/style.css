@@ -17,6 +17,17 @@
     padding: 8px;
 }
 
+.left-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left-content > img{
+   max-height: 300px;
+   max-width: 300px;
+}
+
 .right-content > .detail-description{
     display: flex;
     flex-direction: column;

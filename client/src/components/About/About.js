@@ -17,8 +17,10 @@ const About = () => {
                         <li>create post</li>
                         <li>"Like" user's post</li>
                         <li>Comment on user's post</li>
+                        <li>Change user password</li>
+                        <li>Change user display name / alias</li>
                     </ul>
-                    Full source code: <a href="https://github.com/ChiShingLi/CouponJars">https://github.com/ChiShingLi/CouponJars</a>
+                    Full documentations and source code available at: <a href="https://github.com/ChiShingLi/CouponJars">https://github.com/ChiShingLi/CouponJars</a>
                 </div>
             </div>
         </div>
