@@ -7,7 +7,7 @@
   - **NodeJs**
 
 # **Live Demo**
-- **Frontend client:** ![Netlify Status](https://api.netlify.com/api/v1/badges/9a0ecc42-5fdb-4393-b634-bba4e723b147/deploy-status)
+- **Frontend client:**
   - https://couponjars.netlify.app/
   - Deployed to Netlify 
 
