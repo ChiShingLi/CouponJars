@@ -12,8 +12,8 @@
   - Deployed to Netlify 
 
 - **Backend API server:**
-  - https://couponjars.herokuapp.com
-  - Deployed to Heroku
+  - https://couponjars.onrender.com/
+  - Deployed to Render
 
 # **Client & Server Documentation**
 - You can find both the client and server setup documentation below:
