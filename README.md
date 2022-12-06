@@ -14,6 +14,7 @@
 - **Backend API server:**
   - https://couponjars.onrender.com/
   - Deployed to Render
+    - **Note:** Due to the backend server were deployed under Render's Free plan. It might take a moment to load.
 
 # **Client & Server Documentation**
 - You can find both the client and server setup documentation below:
