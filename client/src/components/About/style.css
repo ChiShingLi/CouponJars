@@ -1,11 +1,11 @@
-.about-wrapper{
+.about-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.about-content{
+.about-content {
     display: flex;
     flex-direction: column;
     padding: 8px;
@@ -16,7 +16,14 @@
     box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
 }
 
-.about-content > .title, .desc{
+.about-content>.title,
+.desc {
     justify-self: center;
     align-self: center;
+}
+
+@media (max-width: 480px) {
+    .about-content {
+        width: 90%;
+    }
 }

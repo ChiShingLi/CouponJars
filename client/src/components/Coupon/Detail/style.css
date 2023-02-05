@@ -1,11 +1,11 @@
-.detail-wrapper{
+.detail-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.detail-content{
+.detail-content {
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(88, 87, 87);
@@ -17,18 +17,19 @@
     padding: 8px;
 }
 
-.left-content{
+.left-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.left-content > img{
-   max-height: 300px;
-   max-width: 300px;
+
+.left-content>img {
+    max-height: 300px;
+    max-width: 300px;
 }
 
-.right-content > .detail-description{
+.right-content>.detail-description {
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
@@ -36,24 +37,26 @@
     gap: 8px;
 }
 
-.info-section{
+.info-section {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-#commentForm{
+#commentForm {
     padding: 8px;
     display: flex;
     flex-direction: column;
-    gap: 8px;   
+    gap: 8px;
 }
-#commentForm > textarea{
+
+#commentForm>textarea {
     min-height: 80px;
     min-width: 100%;
     resize: vertical;
 }
-.submitBtn{
+
+.submitBtn {
     width: 100px;
     height: 30px;
     border-radius: 4px;
@@ -65,4 +68,22 @@
 .submitBtn:hover {
     background-color: green;
     color: white;
+}
+
+@media (max-width: 480px) {
+    .detail-wrapper {
+        padding: 0 10px;
+    }
+
+    .info-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .detail-content {
+        width: 100%;
+        padding: 8px;
+    }
 }

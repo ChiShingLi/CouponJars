@@ -9,10 +9,14 @@ import { ReactComponent as NoImageIcon } from "../../images/noImage.svg";
 import { ReactComponent as PopOutIcon } from "../../images/popOut.svg";
 
 const Coupon = (props) => {
-    const { _id, image, title, description, code, createdAt, likes, posterName, comments} = props.data;
+    const { _id, image, title, description, code, createdAt, likes, posterName, comments } = props.data;
     const formatDate = moment(createdAt).format("MMM DD, YYYY");
     const [likeCount, setlikeCount] = useState(likes);
     const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/post/detail/${_id}`);
+    }
 
     const handleLike = () => {
         axios.patch(`${process.env.REACT_APP_DATABASE_URL}/post/like`, { postId: _id }, {
@@ -26,9 +30,9 @@ const Coupon = (props) => {
         })
     }
     return (
-        <div className="wrapper-grid">
+        <div className="wrapper-grid" >
             <div className="coupon-content">
-                <div className="image-content">
+                <div className="image-content" onClick={handleClick}>
                     {image ? <img src={image} height="120px" /> : <NoImageIcon width="300px" height="120px" />}
                 </div>
                 <div className="right-content">
@@ -42,7 +46,7 @@ const Coupon = (props) => {
                         </div>
                         <div className="comment-content">
                             <div className="commentIcon">
-                            <Link to={`/post/detail/${_id}`}><CommentIcon height="18px" width="18px"/> <div className="commentCount"><b>{comments.length}</b></div></Link>
+                                <Link to={`/post/detail/${_id}`}><CommentIcon height="18px" width="18px" /> <div className="commentCount"><b>{comments.length}</b></div></Link>
                             </div>
 
                         </div>

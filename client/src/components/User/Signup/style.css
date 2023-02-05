@@ -1,11 +1,11 @@
-.wrapper{
+.wrapper {
     margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.signupContainer{
+.signupContainer {
     padding: 10px;
     border: 1px black solid;
     width: 500px;
@@ -13,7 +13,7 @@
     box-shadow: rgb(96, 104, 108) 0px 4px 2px -2px;
 }
 
-.signupBtn{
+.signupBtn {
     width: 100px;
     height: 30px;
     border-radius: 4px;
@@ -21,27 +21,34 @@
     background-color: transparent;
     color: green;
 }
+
 .signupBtn:hover {
     background-color: green;
     color: white;
 }
 
-#signupFrom{
+#signupFrom {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-#signupFrom > input{
+#signupFrom>input {
     height: 30px;
 }
 
-.notice{
+.notice {
     color: red;
 }
 
 
-.login-link{
+.login-link {
     display: inline;
     color: #FAA85F;
+}
+
+@media (max-width: 480px) {
+    .signupContainer {
+        width: 100%;
+    }
 }
